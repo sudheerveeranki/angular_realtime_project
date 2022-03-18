@@ -1,12 +1,12 @@
 
 <h1>login-details works!</h1>
-<form>
-<div class="col-8">
-<input  type="text" class="form-control" placeholder="enter your name">
+<form (ngSubmit)= "submit()">
+<div class="container">
+<input type="text" name="userName" placeholder="enter your name" [(ngModel)]= "data_login.userName" >
 <label>Username:</label>
 <br>
 <div>
-  <input type="email" class="form-control" placeholder="enter your email">
+  <input type="email"  placeholder="enter your email">
   <label>Email Address</label>
 </div>
 <input type="submit" name="submit" value="register">
