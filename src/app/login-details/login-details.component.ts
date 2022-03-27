@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AuthServiceService } from '../Auth-Service/auth-service.service';
 import { NewLogin } from '../new-login';
 
 @Component({
@@ -8,15 +10,16 @@ import { NewLogin } from '../new-login';
   styleUrls: ['./login-details.component.css']
 })
 export class LoginDetailsComponent implements OnInit {
+    userName='';
+    password='';
+    login_data = new NewLogin();
 
-  data_login = new NewLogin();
-
-  constructor() { }
+  constructor(private authService:AuthServiceService) { }
 
   ngOnInit(): void {
   }
   submit(){
-    alert("Login data is:" +this.data_login.userName);
+    this.authService.login(this.userName,this.password);
   }
 }
 

@@ -11,3 +11,7 @@
 <span>
   <a [routerLink]= "['/parent']" routerLinkActive="router-link-active"  style="margin-left: 10px;">   parent</a>
   </span>
+  <span>
+    <a [routerLink]= "['/employee']" routerLinkActive="router-link-active"  style="margin-left: 10px;">   employees</a>
+    </span>
+ <a  (click)="logout()"  href="" *ngIf="logged_in_user" style="margin-left: 780px;">Logout</a>

@@ -11,6 +11,9 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './child/child.component';
+import { EmployeesComponent } from './employees/employees.component';
+import { AuthServiceService } from './Auth-Service/auth-service.service';
+import { AuthGuardService } from './Auth-Service/auth-service-guard';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,14 +23,15 @@ import { ChildComponent } from './child/child.component';
     HeaderComponent,
     FooterComponent,
     ParentComponent,
-    ChildComponent
+    ChildComponent,
+    EmployeesComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule
   ],
-  providers: [],
+  providers: [AuthGuardService,AuthServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
